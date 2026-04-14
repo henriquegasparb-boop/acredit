@@ -256,7 +256,7 @@
             <div class="about-signature fade-up">
               <div class="about-signature-line"></div>
               <div>
-                <span class="about-signature-text">Fundador & CEO</span>
+                <span class="about-signature-text">Henrique Gaspar — Fundador & CEO</span>
                 <span class="about-signature-role">A-CREDIT Soluções Financeiras</span>
               </div>
             </div>
