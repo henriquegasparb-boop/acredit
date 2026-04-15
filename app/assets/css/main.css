@@ -363,17 +363,17 @@ ul {
 }
 
 .hero-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
   align-items: center;
   position: relative;
   z-index: 3;
   padding: 160px 0 120px;
-  justify-content: flex-start;
 }
 
 .hero-content {
-  flex: none;
-  max-width: 540px;
+  min-width: 0;
 }
 
 .hero-badge {
@@ -1827,7 +1827,8 @@ ul {
   }
 
   .hero-inner {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 32px;
     text-align: center;
     padding: 120px 0 80px;
   }
@@ -2021,4 +2022,38 @@ ul {
   .cols-4 .option-card {
     min-width: 45%;
   }
+}
+
+/* ===== COMPLIANCE / INFORMAÇÕES REGULATÓRIAS ===== */
+.compliance {
+  background: var(--gray-light, #F7F9FC);
+  border-top: 1px solid var(--gray-100, #EEF1F6);
+  padding: 48px 0 32px;
+}
+.compliance-inner {
+  max-width: 960px;
+}
+.compliance h4 {
+  color: var(--primary, #04394e);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+}
+.compliance p {
+  color: var(--gray-text, #6B7280);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.compliance p strong {
+  color: var(--gray-dark, #374151);
+  font-weight: 600;
+}
+.compliance-entity {
+  margin-top: 20px !important;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100, #EEF1F6);
+  font-size: 0.8rem !important;
 }

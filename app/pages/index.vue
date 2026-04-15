@@ -18,7 +18,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
               Simular Agora
             </NuxtLink>
-            <a href="https://wa.me/5511945723238" target="_blank" rel="noopener" class="btn btn-outline btn-lg">
+            <a href="https://wa.me/5511945723238?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20A-CREDIT%20e%20gostaria%20de%20falar%20com%20um%20especialista%20sobre%20cr%C3%A9dito." target="_blank" rel="noopener" class="btn btn-outline btn-lg">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               Falar com Especialista
             </a>
@@ -38,6 +38,26 @@
             </div>
           </div>
         </div>
+
+        <form class="hero-form" @submit.prevent="submitHeroForm">
+          <div class="hero-form-title">Receba sua simulação no WhatsApp</div>
+          <div class="hero-form-row">
+            <input v-model="heroForm.name" type="text" placeholder="Seu nome" required />
+            <input v-model="heroForm.whatsapp" type="tel" placeholder="WhatsApp (11) 99999-9999" required @input="maskHeroPhone" maxlength="15" />
+          </div>
+          <div class="hero-form-row">
+            <select v-model="heroForm.creditType" required>
+              <option value="" disabled>Tipo de crédito</option>
+              <option value="Financiamento Imobiliário">Financiamento Imobiliário</option>
+              <option value="Crédito com Garantia de Imóvel">Crédito com Garantia de Imóvel</option>
+            </select>
+            <input v-model="heroForm.value" type="text" placeholder="Valor desejado (R$)" required @input="maskHeroValue" />
+          </div>
+          <button type="submit" class="btn btn-accent btn-lg hero-form-submit">
+            Quero simular no WhatsApp
+          </button>
+          <div class="hero-form-hint">Seus dados são protegidos conforme a LGPD.</div>
+        </form>
       </div>
       <div class="hero-marquee" aria-hidden="true">
         <div class="hero-marquee-track">
@@ -74,7 +94,7 @@
             </ul>
             <div class="card-buttons">
               <NuxtLink to="/simulador" class="btn btn-accent">Simular</NuxtLink>
-              <a href="https://wa.me/5511945723238" target="_blank" rel="noopener" class="btn btn-whatsapp-outline">
+              <a href="https://wa.me/5511945723238?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20A-CREDIT%20e%20gostaria%20de%20saber%20mais%20sobre%20Financiamento%20Imobili%C3%A1rio." target="_blank" rel="noopener" class="btn btn-whatsapp-outline">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 WhatsApp
               </a>
@@ -94,7 +114,7 @@
             </ul>
             <div class="card-buttons">
               <NuxtLink to="/simulador" class="btn btn-accent">Simular</NuxtLink>
-              <a href="https://wa.me/5511945723238" target="_blank" rel="noopener" class="btn btn-whatsapp-outline">
+              <a href="https://wa.me/5511945723238?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20A-CREDIT%20e%20gostaria%20de%20saber%20mais%20sobre%20Cr%C3%A9dito%20com%20Garantia%20de%20Im%C3%B3vel." target="_blank" rel="noopener" class="btn btn-whatsapp-outline">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 WhatsApp
               </a>
@@ -178,7 +198,7 @@
             </NuxtLink>
           </div>
           <div class="sim-cta-visual">
-            <img src="/LOGO 1.png" alt="A-CREDIT" style="width:260px;height:260px;border-radius:50%;box-shadow:0 24px 64px rgba(0,0,0,0.3);border:3px solid rgba(201,168,76,0.2);">
+            <img src="/LOGO 1.png" alt="A-CREDIT" loading="lazy" decoding="async" width="260" height="260" style="width:260px;height:260px;border-radius:50%;box-shadow:0 24px 64px rgba(0,0,0,0.3);border:3px solid rgba(201,168,76,0.2);">
           </div>
         </div>
       </div>
@@ -230,7 +250,7 @@
           <div class="about-photo-wrapper fade-up">
             <div class="about-photo-accent"></div>
             <div class="about-photo-frame"></div>
-            <img src="/FotoH2.jpg" alt="Fundador da A-CREDIT" class="about-photo">
+            <img src="/FotoH2.jpg" alt="Fundador da A-CREDIT" class="about-photo" loading="lazy" decoding="async">
           </div>
           <div class="about-content">
             <div class="section-label fade-up">Quem Somos</div>
@@ -333,7 +353,7 @@
       <div class="container cta-final-inner fade-up">
         <h2>Pronto para conquistar seu crédito?</h2>
         <p>Fale com nossos especialistas e dê o primeiro passo rumo à realização do seu sonho.</p>
-        <a href="https://wa.me/5511945723238?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20cr%C3%A9dito%20imobili%C3%A1rio." target="_blank" rel="noopener" class="btn btn-whatsapp btn-xl">
+        <a href="https://wa.me/5511945723238?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20A-CREDIT%20e%20quero%20conquistar%20meu%20cr%C3%A9dito." target="_blank" rel="noopener" class="btn btn-whatsapp btn-xl">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Falar no WhatsApp
         </a>
@@ -346,15 +366,64 @@
 </template>
 
 <script setup>
-useHead({ title: 'A-CREDIT | Soluções Financeiras - Financiamento Imobiliário' })
-
 const faqs = [
+  { q: 'Autônomo ou MEI consegue financiamento imobiliário?', a: 'Sim. Autônomos, MEIs e profissionais liberais podem financiar normalmente. A análise considera a renda comprovada dos últimos 6 a 12 meses, geralmente via extratos bancários, DECORE, IRPF ou faturamento do MEI. Cada banco tem critérios próprios e nós ajudamos a identificar a instituição com melhor aceitação para o seu perfil.' },
+  { q: 'Quanto preciso de entrada para financiar um imóvel?', a: 'Na maioria dos bancos, o valor mínimo de entrada é de 20% do valor do imóvel. Em alguns programas específicos (como o Minha Casa Minha Vida) e em condições especiais, é possível financiar até 90% — ou seja, apenas 10% de entrada. O FGTS pode ser utilizado para compor essa entrada.' },
+  { q: 'Qual o score mínimo para aprovar financiamento?', a: 'Não existe um score único fixado por lei: cada banco define o próprio corte. Em geral, score acima de 600 aumenta bastante as chances de aprovação; acima de 700 abre as melhores taxas. Score abaixo de 500 dificulta, mas não impossibilita — trabalhamos com bancos que aceitam perfis variados e podemos orientar como melhorar seu score antes da análise.' },
+  { q: 'Quais documentos preciso para simular e contratar?', a: 'Para a simulação inicial: RG, CPF e comprovante de renda. Para contratação: documentos pessoais (RG, CPF, comprovante de estado civil, endereço), comprovante de renda dos últimos 3 a 12 meses, e, no caso de financiamento, documentação do imóvel e do vendedor. A A-CREDIT orienta e organiza toda essa coleta com você.' },
   { q: 'Quanto tempo leva a aprovação do crédito?', a: 'O prazo varia conforme o tipo de crédito e o banco. Em geral, o financiamento imobiliário leva de 30 a 45 dias para aprovação completa. O crédito com garantia de imóvel pode ser liberado em até 30 dias úteis após a entrega de toda a documentação.' },
   { q: 'Preciso ter nome limpo para conseguir crédito?', a: 'Na maioria dos casos, sim. Os bancos realizam análise de crédito e restrições no CPF podem dificultar a aprovação. No entanto, existem opções para diferentes perfis. Entre em contato para avaliarmos seu caso.' },
   { q: 'Posso usar o FGTS no financiamento?', a: 'Sim! O FGTS pode ser utilizado como entrada, para amortização ou para pagamento de parte das parcelas do financiamento imobiliário, desde que o imóvel atenda aos requisitos do programa.' },
   { q: 'Como funciona o crédito com garantia de imóvel?', a: 'Você oferece seu imóvel quitado como garantia e obtém crédito com taxas muito menores que empréstimos tradicionais. O imóvel fica alienado ao banco durante o período do contrato, mas você continua morando nele normalmente. É possível conseguir até 60% do valor do imóvel.' },
   { q: 'Qual o valor mínimo de crédito?', a: 'O valor mínimo varia de acordo com o banco e o tipo de crédito. Para financiamento imobiliário, geralmente a partir de R$ 50.000. Para crédito com garantia de imóvel, a partir de R$ 30.000. Consulte-nos para mais detalhes.' }
 ]
+
+useHead({
+  title: 'A-CREDIT | Soluções Financeiras - Financiamento Imobiliário',
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(f => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a }
+        }))
+      })
+    }
+  ]
+})
+
+const heroForm = ref({ name: '', whatsapp: '', creditType: '', value: '' })
+
+function maskHeroPhone(e) {
+  let v = e.target.value.replace(/\D/g, '').slice(0, 11)
+  if (v.length > 10) v = v.replace(/(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3')
+  else if (v.length > 6) v = v.replace(/(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3')
+  else if (v.length > 2) v = v.replace(/(\d{2})(\d{0,5}).*/, '($1) $2')
+  else if (v.length > 0) v = v.replace(/(\d{0,2}).*/, '($1')
+  heroForm.value.whatsapp = v
+}
+
+function maskHeroValue(e) {
+  const v = e.target.value.replace(/\D/g, '')
+  if (!v) { heroForm.value.value = ''; return }
+  heroForm.value.value = 'R$ ' + Number(v).toLocaleString('pt-BR')
+}
+
+function submitHeroForm() {
+  const f = heroForm.value
+  const phone = f.whatsapp.replace(/\D/g, '')
+  if (phone.length < 10) { alert('Informe um WhatsApp válido.'); return }
+
+  const { trackLead } = useTracking()
+  trackLead('hero_form')
+
+  const msg = `Olá! Gostaria de simular meu crédito.%0A%0A*Nome:* ${f.name}%0A*WhatsApp:* ${f.whatsapp}%0A*Tipo:* ${f.creditType}%0A*Valor desejado:* ${f.value}`
+  window.open(`https://wa.me/5511945723238?text=${msg}`, '_blank')
+}
 
 const activeFaq = ref(null)
 const faqRefs = ref([])
@@ -388,3 +457,66 @@ onMounted(() => {
   })
 })
 </script>
+
+<style scoped>
+.hero-form {
+  position: relative;
+  z-index: 10;
+  padding: 28px;
+  background: linear-gradient(180deg, rgba(4, 57, 78, 0.96) 0%, rgba(4, 57, 78, 0.92) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 16px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  align-self: center;
+}
+.hero-form-title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+  letter-spacing: 0.02em;
+}
+.hero-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.hero-form input,
+.hero-form select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.95);
+  color: #0a1628;
+  font-size: 0.92rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.hero-form input:focus,
+.hero-form select:focus {
+  border-color: var(--accent, #d4af37);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+}
+.hero-form-submit {
+  width: 100%;
+  margin-top: 6px;
+  justify-content: center;
+}
+.hero-form-hint {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.75rem;
+  margin-top: 10px;
+  text-align: center;
+}
+@media (max-width: 640px) {
+  .hero-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

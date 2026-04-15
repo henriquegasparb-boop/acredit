@@ -4,7 +4,7 @@
     <section class="legal-page">
       <div class="container">
         <h1>Política de Privacidade</h1>
-        <p class="legal-update">Última atualização: Janeiro de 2025</p>
+        <p class="legal-update">Última atualização: Abril de 2026</p>
 
         <h2>1. Informações Coletadas</h2>
         <p>Coletamos informações pessoais fornecidas voluntariamente por você ao utilizar nosso simulador ou entrar em contato conosco, incluindo:</p>
@@ -33,8 +33,15 @@
         <h2>4. Segurança</h2>
         <p>Adotamos medidas de segurança adequadas para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição.</p>
 
-        <h2>5. Cookies</h2>
-        <p>Nosso site pode utilizar cookies para melhorar a experiência de navegação. Você pode configurar seu navegador para recusar cookies, embora isso possa afetar algumas funcionalidades do site.</p>
+        <h2>5. Cookies e Tecnologias de Rastreamento</h2>
+        <p>Utilizamos cookies e tecnologias semelhantes para analisar o uso do site, personalizar sua experiência e mensurar a efetividade de nossas campanhas de marketing. Ao acessar o site, é exibido um banner de consentimento — os cookies de análise e marketing só são ativados após sua aprovação explícita.</p>
+        <p>As seguintes ferramentas de terceiros podem ser utilizadas mediante seu consentimento:</p>
+        <ul>
+          <li><strong>Google Analytics 4 (Google LLC):</strong> coleta informações sobre navegação, páginas visitadas, tempo de permanência e origem do tráfego, de forma anonimizada, para fins estatísticos e de melhoria do site.</li>
+          <li><strong>Meta Pixel (Meta Platforms, Inc.):</strong> identifica interações no site (como visualizações de página e preenchimento de formulários) para mensurar o desempenho de campanhas publicitárias e apresentar anúncios relevantes em Facebook e Instagram.</li>
+        </ul>
+        <p>Você pode revogar seu consentimento a qualquer momento limpando os cookies do seu navegador ou configurando-o para recusá-los. Essa ação não afeta o uso das funcionalidades essenciais do site (como a simulação e o contato via WhatsApp).</p>
+        <p>Também é possível desabilitar esses rastreadores diretamente nas ferramentas externas: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">complemento de desativação do Google Analytics</a> e <a href="https://www.facebook.com/adpreferences/" target="_blank" rel="noopener">preferências de anúncios da Meta</a>.</p>
 
         <h2>6. Seus Direitos</h2>
         <p>De acordo com a Lei Geral de Proteção de Dados (LGPD), você tem direito a:</p>

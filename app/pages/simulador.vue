@@ -236,7 +236,7 @@
         <p class="wizard-subtitle">Confira abaixo as condições estimadas para o seu crédito</p>
         <div class="result-card">
           <div class="result-header">
-            <img src="/LOGO 2.png" alt="A-CREDIT" class="result-logo">
+            <img src="/LOGO 2.png" alt="A-CREDIT" class="result-logo" loading="lazy" decoding="async">
           </div>
           <div class="result-body">
             <div class="result-main">
@@ -282,6 +282,17 @@
       </div>
 
     </main>
+
+    <section class="compliance">
+      <div class="container compliance-inner">
+        <h4>Informações Regulatórias</h4>
+        <p>A <strong>A-CREDIT Soluções Financeiras</strong> é uma empresa especializada na intermediação de operações de crédito, atuando como correspondente bancário em conformidade com as normas do Sistema Financeiro Nacional. Nosso papel é facilitar o acesso a soluções de crédito por meio de parcerias com instituições financeiras e entidades de crédito, oferecendo um processo estruturado, transparente e seguro.</p>
+        <p>Toda a atuação da A-CREDIT segue rigorosamente as diretrizes da <strong>Resolução CMN nº 4.935, de 29 de julho de 2021</strong>, do Conselho Monetário Nacional e Banco Central do Brasil, que regulamenta a atividade de correspondentes no país.</p>
+        <p>A A-CREDIT atua como correspondente contratado da <strong>ACREDIT ASSESSORIA</strong> (CNPJ nº 34.883.860/0001-32), bem como de outras instituições financeiras e de crédito parceiras, conforme contratos vigentes e autorizações regulatórias aplicáveis, permitindo ao cliente acessar diferentes alternativas de crédito em um único ambiente.</p>
+        <p>A A-CREDIT <strong>não é uma instituição financeira</strong> e não realiza concessão direta de crédito. A análise, aprovação, definição de taxas, prazos e demais condições das operações são de responsabilidade exclusiva das instituições financeiras parceiras.</p>
+        <p class="compliance-entity">A-CREDIT Soluções Financeiras LTDA — CNPJ nº 62.126.832/0001-06. Operação 100% digital, com atendimento em todo o território nacional.</p>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -451,6 +462,12 @@ function submitSimulation() {
     alert('Você precisa concordar com os Termos de uso para continuar.')
     return
   }
+  const { trackCompleteSimulation, trackLead } = useTracking()
+  trackLead('simulador')
+  trackCompleteSimulation({
+    operation_type: state.operationType,
+    property_value: state.propertyValue
+  })
   showResult()
 }
 
