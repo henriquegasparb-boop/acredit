@@ -59,19 +59,21 @@
           <div class="hero-form-hint">Seus dados são protegidos conforme a LGPD.</div>
         </form>
       </div>
-      <div class="hero-marquee" aria-hidden="true">
-        <div class="hero-marquee-track">
-          <span class="hero-marquee-item">Simule agora</span>
-          <span class="hero-marquee-item">Seja aprovado</span>
-          <span class="hero-marquee-item">Realize seu sonho</span>
-          <span class="hero-marquee-item">Conte sempre com a A-Credit</span>
-          <span class="hero-marquee-item">Simule agora</span>
-          <span class="hero-marquee-item">Seja aprovado</span>
-          <span class="hero-marquee-item">Realize seu sonho</span>
-          <span class="hero-marquee-item">Conte sempre com a A-Credit</span>
-        </div>
-      </div>
     </section>
+
+    <!-- LETREIRO -->
+    <div class="hero-marquee hero-marquee-standalone" aria-hidden="true">
+      <div class="hero-marquee-track">
+        <span class="hero-marquee-item">Simule agora</span>
+        <span class="hero-marquee-item">Seja aprovado</span>
+        <span class="hero-marquee-item">Realize seu sonho</span>
+        <span class="hero-marquee-item">Conte sempre com a A-Credit</span>
+        <span class="hero-marquee-item">Simule agora</span>
+        <span class="hero-marquee-item">Seja aprovado</span>
+        <span class="hero-marquee-item">Realize seu sonho</span>
+        <span class="hero-marquee-item">Conte sempre com a A-Credit</span>
+      </div>
+    </div>
 
     <!-- PRODUTOS -->
     <section class="section" id="produtos">
