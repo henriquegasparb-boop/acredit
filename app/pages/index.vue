@@ -515,8 +515,31 @@ onMounted(() => {
   text-align: center;
 }
 @media (max-width: 640px) {
+  .hero-form {
+    padding: 18px 16px;
+    border-radius: 12px;
+  }
   .hero-form-row {
     grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .hero-form-title {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+  .hero-form input,
+  .hero-form select {
+    padding: 10px 12px;
+    font-size: 0.88rem;
+  }
+  .hero-form-submit {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+  .hero-form-hint {
+    font-size: 0.7rem;
+    margin-top: 8px;
   }
 }
 </style>

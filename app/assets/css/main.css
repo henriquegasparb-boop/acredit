@@ -1815,22 +1815,26 @@ ul {
     min-height: 100vh;
   }
 
+  .hero-spline {
+    display: none;
+  }
+
+  .hero {
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(201, 168, 76, 0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 80%, rgba(4, 57, 78, 0.6) 0%, transparent 60%),
+      linear-gradient(160deg, #011820 0%, #04394e 55%, #011820 100%);
+  }
+
   .hero-spline-overlay {
-    width: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(1, 24, 32, 0.85) 0%,
-      rgba(1, 24, 32, 0.7) 50%,
-      rgba(1, 24, 32, 0.4) 80%,
-      transparent 100%
-    );
+    display: none;
   }
 
   .hero-inner {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
     text-align: center;
-    padding: 120px 0 80px;
+    padding: 110px 0 110px;
   }
 
   .hero-content {
