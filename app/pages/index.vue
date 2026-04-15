@@ -515,33 +515,8 @@ onMounted(() => {
   text-align: center;
 }
 @media (max-width: 640px) {
-  .hero-form {
-    padding: 14px 12px;
-    border-radius: 12px;
-  }
   .hero-form-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-    margin-bottom: 6px;
-  }
-  .hero-form-title {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-  }
-  .hero-form input,
-  .hero-form select {
-    padding: 8px 10px;
-    font-size: 0.82rem;
-    border-radius: 6px;
-  }
-  .hero-form-submit {
-    padding: 10px 14px;
-    font-size: 0.9rem;
-    margin-top: 2px;
-  }
-  .hero-form-hint {
-    font-size: 0.65rem;
-    margin-top: 6px;
+    grid-template-columns: 1fr;
   }
 }
 </style>

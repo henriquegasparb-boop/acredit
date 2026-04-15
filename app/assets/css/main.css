@@ -1832,9 +1832,9 @@ ul {
 
   .hero-inner {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 32px;
     text-align: center;
-    padding: 110px 0 110px;
+    padding: 120px 0 140px;
   }
 
   .hero-content {
