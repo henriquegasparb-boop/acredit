@@ -516,30 +516,32 @@ onMounted(() => {
 }
 @media (max-width: 640px) {
   .hero-form {
-    padding: 18px 16px;
+    padding: 14px 12px;
     border-radius: 12px;
   }
   .hero-form-row {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    margin-bottom: 8px;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 6px;
   }
   .hero-form-title {
-    font-size: 0.95rem;
-    margin-bottom: 12px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
   }
   .hero-form input,
   .hero-form select {
-    padding: 10px 12px;
-    font-size: 0.88rem;
+    padding: 8px 10px;
+    font-size: 0.82rem;
+    border-radius: 6px;
   }
   .hero-form-submit {
-    padding: 12px 16px;
-    font-size: 0.95rem;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    margin-top: 2px;
   }
   .hero-form-hint {
-    font-size: 0.7rem;
-    margin-top: 8px;
+    font-size: 0.65rem;
+    margin-top: 6px;
   }
 }
 </style>
