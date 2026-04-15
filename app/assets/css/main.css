@@ -1830,18 +1830,7 @@ ul {
     grid-template-columns: 1fr;
     gap: 32px;
     text-align: center;
-    padding: 120px 0 40px;
-  }
-
-  .hero-marquee {
-    position: static;
-    padding: 10px 0;
-  }
-
-  .hero-marquee-item {
-    font-size: 1.1rem;
-    padding: 0 24px;
-    gap: 24px;
+    padding: 120px 0 80px;
   }
 
   .hero-content {
