@@ -1832,9 +1832,18 @@ ul {
 
   .hero-inner {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
     text-align: center;
-    padding: 90px 0 180px;
+    padding: 70px 0 32px;
+  }
+
+  .hero {
+    overflow: visible;
+  }
+
+  .hero-marquee {
+    position: static;
+    margin-top: 24px;
   }
 
   .hero-content {
